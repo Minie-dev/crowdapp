@@ -1,14 +1,16 @@
+import 'package:crowdapp/features/home_pages/footer.dart';
+import 'package:crowdapp/features/home_pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:crowdapp/constants/image_strings.dart';
 import 'package:crowdapp/constants/sizes.dart';
 import 'package:crowdapp/constants/text_string.dart';
-import 'package:crowdapp/features/authentification/screens/login/login_screen.dart';
+import 'package:crowdapp/features/authentification/views/login/SignIn.dart';
 
 const _mainColor = Color(0xFF1c77c3);
 
-class Signin extends StatelessWidget {
-  const Signin({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class Signin extends StatelessWidget {
       )),
       child: Scaffold(
         backgroundColor: _mainColor,
-        body: Stack(    
+        body: Stack(
           children: [
-            Positioned(top: 70,left: 25, child: _buildTop()),
+            Positioned(top: 70, child: _buildTop(context)),
             Positioned(bottom: -4, child: _buildBottom(context))
           ],
         ),
@@ -30,17 +32,23 @@ class Signin extends StatelessWidget {
     );
   }
 
-
-  Widget _buildTop() {
-    return const SizedBox(
+  Widget _buildTop(context) {
+    return  SizedBox(
       child: Column(
         children: [
-          Text(welcome,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: Colors.white,
-              ))
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: 
+              const Text(welcome,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  color: Colors.white,
+                ),
+              textAlign: TextAlign.center,
+              
+            ),
+          )
         ],
       ),
     );
@@ -50,7 +58,7 @@ class Signin extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       child: Card(
-        shape: const RoundedRectangleBorder(
+        shape:const  RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(formBorder),
             topRight: Radius.circular(formBorder),
@@ -61,16 +69,7 @@ class Signin extends StatelessWidget {
             padding: const EdgeInsets.all(24),
             child: Column(
               children: [
-                Text(signin, style: GoogleFonts.montserrat(fontSize: 42, letterSpacing: -3, color: _mainColor, fontWeight: FontWeight.bold),),
-                const SizedBox(height: 15),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: TextUser,
-                    labelText: username,
-                    prefixIcon: Icon(Icons.person),
-                    border: OutlineInputBorder()
-                  ),
-                ),
+                Text(signup, style: GoogleFonts.montserrat(fontSize: 42, letterSpacing: -3, color: _mainColor, fontWeight: FontWeight.bold),),
                 const SizedBox(height: 15),
                 TextFormField(
                   decoration: const InputDecoration(
@@ -89,6 +88,10 @@ class Signin extends StatelessWidget {
                     border: OutlineInputBorder()
                   ),
                 ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(onPressed: (){}, child: Text(ForgotPassword, style: GoogleFonts.roboto(color: Colors.blue))),
+                ),
                 const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
@@ -100,7 +103,10 @@ class Signin extends StatelessWidget {
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 16)
                     ),
-                    onPressed: (){}, child: Text(signin.toUpperCase(), style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),),),
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                    }, 
+                    child: Text("Connexion".toUpperCase(), style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),),),
                 ),
                 const SizedBox(height: 15),
                 Text(Continue, style: GoogleFonts.roboto(fontSize: 18, color: Colors.black),),
@@ -115,7 +121,9 @@ class Signin extends StatelessWidget {
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 16)
                     ),
-                    onPressed: (){}, child: Row(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const Footer()) );
+                    }, child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children:[
                         Image(image: AssetImage(imgGoogle),height: 35, ),
@@ -130,13 +138,13 @@ class Signin extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(ExistCompte, 
-                        style: TextStyle(fontSize: 11,)
+                      const Text(NoExistCompte, 
+                        style: TextStyle(fontSize: 11.5,)
                       ),
                       TextButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signup()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signin()));
                       }, 
-                        child: const Text(Login, 
+                        child: const Text(login, 
                           style: TextStyle(color:_mainColor,),
                         )
                       )

@@ -41,46 +41,47 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD2l0YLzA5qZMin3zzARi6ySFv7LoFgaWQ',
-    appId: '1:193541270551:web:c809a7632a0089d5ccc052',
-    messagingSenderId: '193541270551',
-    projectId: 'crowdapp-5cbe2',
-    authDomain: 'crowdapp-5cbe2.firebaseapp.com',
-    storageBucket: 'crowdapp-5cbe2.appspot.com',
+    apiKey: 'AIzaSyCR0AE7Eg3K-KmrKDRCDJbtUCRnTDVDp1M',
+    appId: '1:1002840515813:web:2e0f301e1814fdbb79e00c',
+    messagingSenderId: '1002840515813',
+    projectId: 'monprojet-848d7',
+    authDomain: 'monprojet-848d7.firebaseapp.com',
+    storageBucket: 'monprojet-848d7.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBNU6AdBXO9a8lYaPE1cUK2KdRy6INbRHA',
-    appId: '1:193541270551:android:4b54d4e0229a0098ccc052',
-    messagingSenderId: '193541270551',
-    projectId: 'crowdapp-5cbe2',
-    storageBucket: 'crowdapp-5cbe2.appspot.com',
+    apiKey: 'AIzaSyB-6QJy8GV2KqOG_9vJXCV1grCO2OupdD8',
+    appId: '1:1002840515813:android:198228d7f67a309579e00c',
+    messagingSenderId: '1002840515813',
+    projectId: 'monprojet-848d7',
+    storageBucket: 'monprojet-848d7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBKLro8Yh5Z2ilmuioArIoPu1THhlbM2sQ',
-    appId: '1:193541270551:ios:ce7cba61b86f32e4ccc052',
-    messagingSenderId: '193541270551',
-    projectId: 'crowdapp-5cbe2',
-    storageBucket: 'crowdapp-5cbe2.appspot.com',
+    apiKey: 'AIzaSyCh40ejwcAjvYUgSTyXZuaYp1uwLXFtQXk',
+    appId: '1:1002840515813:ios:8d13b76f8bfe606a79e00c',
+    messagingSenderId: '1002840515813',
+    projectId: 'monprojet-848d7',
+    storageBucket: 'monprojet-848d7.appspot.com',
     iosBundleId: 'com.example.crowdapp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBKLro8Yh5Z2ilmuioArIoPu1THhlbM2sQ',
-    appId: '1:193541270551:ios:ce7cba61b86f32e4ccc052',
-    messagingSenderId: '193541270551',
-    projectId: 'crowdapp-5cbe2',
-    storageBucket: 'crowdapp-5cbe2.appspot.com',
+    apiKey: 'AIzaSyCh40ejwcAjvYUgSTyXZuaYp1uwLXFtQXk',
+    appId: '1:1002840515813:ios:8d13b76f8bfe606a79e00c',
+    messagingSenderId: '1002840515813',
+    projectId: 'monprojet-848d7',
+    storageBucket: 'monprojet-848d7.appspot.com',
     iosBundleId: 'com.example.crowdapp',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD2l0YLzA5qZMin3zzARi6ySFv7LoFgaWQ',
-    appId: '1:193541270551:web:3d97a88f8c3b2d96ccc052',
-    messagingSenderId: '193541270551',
-    projectId: 'crowdapp-5cbe2',
-    authDomain: 'crowdapp-5cbe2.firebaseapp.com',
-    storageBucket: 'crowdapp-5cbe2.appspot.com',
+    apiKey: 'AIzaSyCR0AE7Eg3K-KmrKDRCDJbtUCRnTDVDp1M',
+    appId: '1:1002840515813:web:5380c53318cf71ba79e00c',
+    messagingSenderId: '1002840515813',
+    projectId: 'monprojet-848d7',
+    authDomain: 'monprojet-848d7.firebaseapp.com',
+    storageBucket: 'monprojet-848d7.appspot.com',
   );
+
 }

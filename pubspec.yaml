@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^6.2.1
   font_awesome_flutter: ^10.7.0
   firebase_core: ^2.24.2
+  fab_menu_bottomnav: ^0.1.0
+  flutter_native_splash: ^2.4.1
 
 dev_dependencies:
   flutter_test:

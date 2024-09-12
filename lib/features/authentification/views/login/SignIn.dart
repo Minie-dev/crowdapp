@@ -1,15 +1,16 @@
+import 'package:crowdapp/features/home_pages/footer.dart';
+import 'package:crowdapp/features/home_pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:crowdapp/constants/image_strings.dart';
 import 'package:crowdapp/constants/sizes.dart';
 import 'package:crowdapp/constants/text_string.dart';
-import 'package:crowdapp/features/authentification/screens/login/SignIn.dart';
-import 'package:crowdapp/features/authentification/screens/on_boarding/hompage.dart';
+import 'package:crowdapp/features/authentification/views/login/login_screen.dart';
 
 const _mainColor = Color(0xFF1c77c3);
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Signin extends StatelessWidget {
+  const Signin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,9 @@ class Signup extends StatelessWidget {
       )),
       child: Scaffold(
         backgroundColor: _mainColor,
-        body: Stack(
+        body: Stack(    
           children: [
-            Positioned(top: 70, child: _buildTop(context)),
+            Positioned(top: 70,left: 25, child: _buildTop()),
             Positioned(bottom: -4, child: _buildBottom(context))
           ],
         ),
@@ -31,23 +32,17 @@ class Signup extends StatelessWidget {
     );
   }
 
-  Widget _buildTop(context) {
-    return  SizedBox(
+
+  Widget _buildTop() {
+    return const SizedBox(
       child: Column(
         children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: 
-              const Text(welcome,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                  color: Colors.white,
-                ),
-              textAlign: TextAlign.center,
-              
-            ),
-          )
+          Text(welcome,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                color: Colors.white,
+              ))
         ],
       ),
     );
@@ -57,7 +52,7 @@ class Signup extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       child: Card(
-        shape:const  RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(formBorder),
             topRight: Radius.circular(formBorder),
@@ -68,7 +63,16 @@ class Signup extends StatelessWidget {
             padding: const EdgeInsets.all(24),
             child: Column(
               children: [
-                Text(signup, style: GoogleFonts.montserrat(fontSize: 42, letterSpacing: -3, color: _mainColor, fontWeight: FontWeight.bold),),
+                Text(signin, style: GoogleFonts.montserrat(fontSize: 42, letterSpacing: -3, color: _mainColor, fontWeight: FontWeight.bold),),
+                const SizedBox(height: 15),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: TextUser,
+                    labelText: username,
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder()
+                  ),
+                ),
                 const SizedBox(height: 15),
                 TextFormField(
                   decoration: const InputDecoration(
@@ -87,10 +91,6 @@ class Signup extends StatelessWidget {
                     border: OutlineInputBorder()
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(onPressed: (){}, child: Text(ForgotPassword, style: GoogleFonts.roboto(color: Colors.blue))),
-                ),
                 const SizedBox(height: 15),
                 SizedBox(
                   width: double.infinity,
@@ -103,9 +103,8 @@ class Signup extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 16)
                     ),
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const PageAccueil()));
-                    }, 
-                    child: Text("Connexion".toUpperCase(), style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),),),
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Footer()));
+                    }, child: Text(signin.toUpperCase(), style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),),),
                 ),
                 const SizedBox(height: 15),
                 Text(Continue, style: GoogleFonts.roboto(fontSize: 18, color: Colors.black),),
@@ -135,13 +134,13 @@ class Signup extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(NoExistCompte, 
-                        style: TextStyle(fontSize: 11.5,)
+                      const Text(ExistCompte, 
+                        style: TextStyle(fontSize: 11,)
                       ),
                       TextButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signin()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> const Signup()));
                       }, 
-                        child: const Text(login, 
+                        child: const Text(Login, 
                           style: TextStyle(color:_mainColor,),
                         )
                       )

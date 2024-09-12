@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:crowdapp/features/authentification/screens/login/login_screen.dart';
+import 'package:crowdapp/features/authentification/views/login/login_screen.dart';
 
 class DelayedAnimation extends StatefulWidget{
   final Widget child;

@@ -4,13 +4,13 @@ import 'package:crowdapp/constants/text_string.dart';
 
 const _mainColor = Color(0xFF1c77c3);
 
-class MyAppBar extends StatelessWidget {
-  const MyAppBar({super.key});
+class Header extends StatelessWidget {
+  const Header({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
+      leading: const IconButton(
         icon: Icon(
           Icons.menu,
           color: Colors.black,
